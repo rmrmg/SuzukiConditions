@@ -1,0 +1,973 @@
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+[0.]
+ZERO [67, 80, 135, 145, 156, 158, 160, 172, 173, 176, 184, 195, 204, 217, 275, 288, 292, 343, 344, 359, 362, 364, 366, 368, 369, 370, 374, 376, 377, 380, 381, 384, 385, 392, 398, 399, 403, 405, 409, 410, 412]
+input] Namespace(act1='elu', act2='elu', input='input_rawT_rdkit_rawLig_newClasses', n1=130, n2=15, scale=True)
+DIM 417
+Model: "functional_1"
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            [(None, 417)]        0                                            
+__________________________________________________________________________________________________
+dense (Dense)                   (None, 130)          54340       input_1[0][0]                    
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 15)           1965        dense[0][0]                      
+__________________________________________________________________________________________________
+solvent (Dense)                 (None, 6)            96          dense_1[0][0]                    
+__________________________________________________________________________________________________
+base (Dense)                    (None, 7)            112         dense_1[0][0]                    
+==================================================================================================
+Total params: 56,513
+Trainable params: 56,513
+Non-trainable params: 0
+__________________________________________________________________________________________________
+shapes [(417, 130), (130,), (130, 15), (15,), (15, 6), (6,), (15, 7), (7,)]
+Epoch 1/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2826 - solvent_top2: 0.0094 - solvent_top3: 0.0138 - base_accuracy: 0.7447 - base_top2: 0.0071 - base_top3: 0.0114 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 2/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 3/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 4/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 5/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 6/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 7/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 8/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 9/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 10/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 11/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 12/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 13/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 14/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 15/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 16/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 17/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 18/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 19/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 20/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 21/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 22/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 23/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 24/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 25/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 26/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 27/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 28/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 29/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 30/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 31/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 32/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 33/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 34/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 35/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 36/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 37/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 38/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 39/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 40/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 41/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 42/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 43/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 44/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 45/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 46/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 47/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 48/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 49/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 50/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 51/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 52/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 53/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 54/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 55/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 56/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 57/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 58/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 59/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 60/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 61/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 62/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 63/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 64/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 65/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 66/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 67/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 68/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 69/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 70/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2847 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7610 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2418 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7987 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 1/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2686 - solvent_top2: 2.8119e-04 - solvent_top3: 9.3729e-04 - base_accuracy: 0.7767 - base_top2: 9.3729e-04 - base_top3: 0.0011 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 2/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 3/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 4/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 5/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 6/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 7/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 8/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 9/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 10/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 11/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 12/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 13/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 14/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 15/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 16/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 17/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 18/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 19/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 20/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 21/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 22/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 23/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 24/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 25/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 26/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 27/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 28/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 29/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 30/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 31/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 32/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 33/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 34/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 35/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 36/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 37/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 38/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 39/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 40/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 41/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 42/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 43/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 44/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 45/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 46/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 47/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 48/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 49/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 50/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 51/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 52/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 53/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 54/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 55/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 56/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 57/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 58/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 59/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 60/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 61/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 62/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 63/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 64/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 65/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 66/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 67/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 68/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 69/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 70/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2689 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7771 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.3047 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7343 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 1/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 9.3721e-04 - solvent_top3: 0.0014 - base_accuracy: 0.7698 - base_top2: 2.8116e-04 - base_top3: 8.4349e-04 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 2/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 3/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 4/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 5/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 6/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 7/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 8/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 9/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 10/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 11/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 12/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 13/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 14/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 15/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 16/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 17/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 18/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 19/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 20/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 21/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 22/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 23/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 24/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 25/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 26/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 27/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 28/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 29/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 30/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 31/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 32/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 33/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 34/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 35/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 36/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 37/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 38/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 39/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 40/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 41/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 42/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 43/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 44/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 45/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 46/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 47/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 48/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 49/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 50/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 51/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 52/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 53/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 54/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 55/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 56/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 57/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 58/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 59/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 60/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 61/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 62/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 63/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 64/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 65/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 66/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 67/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 68/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 69/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 70/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2733 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7710 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2872 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7585 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 1/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2782 - solvent_top2: 8.4349e-04 - solvent_top3: 0.0010 - base_accuracy: 0.7664 - base_top2: 0.0014 - base_top3: 0.0015 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 2/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 3/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 4/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 5/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 6/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 7/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 8/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 9/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 10/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 11/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 12/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 13/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 14/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 15/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 16/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 17/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 18/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 19/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 20/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 21/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 22/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 23/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 24/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 25/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 26/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 27/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 28/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 29/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 30/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 31/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 32/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 33/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 34/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 35/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 36/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 37/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 38/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 39/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 40/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 41/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 42/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 43/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 44/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 45/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 46/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 47/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 48/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 49/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 50/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 51/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 52/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 53/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 54/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 55/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 56/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 57/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 58/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 59/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 60/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 61/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 62/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 63/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 64/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 65/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 66/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 67/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 68/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 69/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 70/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2780 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7668 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2685 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7754 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 1/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 5.6232e-04 - solvent_top3: 0.0011 - base_accuracy: 0.7653 - base_top2: 2.8116e-04 - base_top3: 3.7488e-04 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 2/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 3/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 4/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 5/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 6/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 7/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 8/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 9/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 10/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 11/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 12/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 13/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 14/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 15/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 16/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 17/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 18/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 19/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 20/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 21/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 22/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 23/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 24/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 25/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 26/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 27/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 28/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 29/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 30/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 31/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 32/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 33/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 34/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 35/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 36/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 37/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 38/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 39/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 40/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 41/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 42/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 43/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 44/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 45/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 46/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 47/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 48/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 49/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 50/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 51/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 52/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 53/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 54/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 55/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 56/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 57/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 58/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 59/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 60/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 61/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 62/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 63/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 64/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 65/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 66/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 67/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 68/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 69/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+Epoch 70/70
+534/534 - 1s - loss: nan - solvent_loss: nan - base_loss: nan - solvent_accuracy: 0.2755 - solvent_top2: 0.0000e+00 - solvent_top3: 0.0000e+00 - base_accuracy: 0.7667 - base_top2: 0.0000e+00 - base_top3: 0.0000e+00 - val_loss: nan - val_solvent_loss: nan - val_base_loss: nan - val_solvent_accuracy: 0.2782 - val_solvent_top2: 0.0000e+00 - val_solvent_top3: 0.0000e+00 - val_base_accuracy: 0.7758 - val_base_top2: 0.0000e+00 - val_base_top3: 0.0000e+00
+1 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+2 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+3 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+4 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+5 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+6 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+7 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+8 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+9 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+10 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+11 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+12 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+13 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+14 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+15 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+16 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+17 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+18 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+19 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+20 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+21 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+22 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+23 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+24 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+25 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+26 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+27 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+28 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+29 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+30 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+31 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+32 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+33 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+34 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+35 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+36 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+37 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+38 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+39 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+40 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+41 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+42 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+43 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+44 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+45 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+46 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+47 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+48 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+49 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+50 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+51 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+52 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+53 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+54 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+55 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+56 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+57 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+58 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+59 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+60 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+61 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+62 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+63 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+64 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+65 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+66 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+67 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+68 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+69 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
+70 base: 0.7685389757156372 0.02390672372579541 solvent: 0.2760745078325272 0.02337284499335086
+     base_top2: 0.0 0.0 top3 0.0 0.0
+  solvent_top2: 0.0 0.0 top3 0.0 0.0
