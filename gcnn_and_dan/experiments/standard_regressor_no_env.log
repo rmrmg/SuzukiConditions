@@ -1,0 +1,107 @@
+2020-06-24 12:03:03,304: INFO): START
+2020-06-24 12:03:03,304: INFO): command line arguments:
+chk: null
+config: experiments/config_files/vanilla_no_env.yaml
+epochs: 15
+log: standard_regressor_no_env.log
+one_fold: false
+permute: null
+
+2020-06-24 12:03:03,308: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  output: yield
+model_config:
+  act1: relu
+  act2: relu
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+  out_act: linear
+  standarization: normal
+train_config:
+  batch_size: 100
+  epochs: 15
+  verbose: true
+
+2020-06-24 12:03:03,308: INFO): using checkpoint: checkpoint.pkz
+2020-06-24 12:03:04,055: INFO): checkpoint loaded
+2020-06-24 12:03:04,684: INFO): Constant cols eliminated
+2020-06-24 12:03:04,684: INFO): data shapes: [(17526, 512), (17526, 512), (17526, 181), (17526, 47), (17526, 505)]
+2020-06-24 12:03:04,685: INFO): Normal standarization of Y
+2020-06-24 12:03:04,685: INFO): Fold 0
+2020-06-24 12:03:13,060: INFO): Fold 1
+2020-06-24 12:03:21,491: INFO): Fold 2
+2020-06-24 12:03:29,957: INFO): Fold 3
+2020-06-24 12:03:38,552: INFO): Fold 4
+2020-06-24 12:03:47,284: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-24 12:03:47,284: INFO): MAE:   16.150 (   1.263)
+2020-06-24 12:03:47,299: INFO): Best epoch: 3
+2020-06-24 12:03:47,299: INFO): CV AV:   21.990
+2020-06-24 12:03:47,299: INFO): CV std    1.495
+2020-06-24 12:10:19,888: INFO): START
+2020-06-24 12:10:19,888: INFO): command line arguments:
+chk: chk_no_env.chk
+config: experiments/config_files/vanilla_no_env.yaml
+epochs: 15
+log: standard_regressor_no_env.log
+one_fold: false
+permute: null
+
+2020-06-24 12:10:19,892: INFO): Config:
+loader_config:
+  checkpoint: chk_no_env.chk
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  output: yield
+model_config:
+  act1: relu
+  act2: relu
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+  out_act: linear
+  standarization: normal
+train_config:
+  batch_size: 100
+  epochs: 15
+  verbose: true
+
+2020-06-24 12:10:19,892: INFO): using checkpoint: chk_no_env.chk
+2020-06-24 12:10:19,892: INFO): using 100.0% of data
+2020-06-24 12:10:27,432: INFO): checkpoint saved
+2020-06-24 12:10:27,777: INFO): Constant cols eliminated
+2020-06-24 12:10:27,777: INFO): data shapes: [(17526, 512), (17526, 512)]
+2020-06-24 12:10:27,777: INFO): Normal standarization of Y
+2020-06-24 12:10:27,778: INFO): Fold 0
+2020-06-24 12:10:33,409: INFO): Fold 1
+2020-06-24 12:10:39,119: INFO): Fold 2
+2020-06-24 12:10:44,950: INFO): Fold 3
+2020-06-24 12:10:50,774: INFO): Fold 4
+2020-06-24 12:10:56,733: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-24 12:10:56,733: INFO): MAE:   16.618 (   2.176)
+2020-06-24 12:10:56,743: INFO): Best epoch: 5
+2020-06-24 12:10:56,743: INFO): CV AV:   22.717
+2020-06-24 12:10:56,743: INFO): CV std    2.077

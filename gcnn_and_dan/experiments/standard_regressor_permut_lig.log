@@ -1,0 +1,52 @@
+2020-06-24 11:14:19,065: INFO): START
+2020-06-24 11:14:19,066: INFO): command line arguments:
+chk: null
+config: null
+log: standard_regressor_permut_lig.log
+one_fold: true
+permute: 4
+
+2020-06-24 11:14:19,067: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  act1: relu
+  act2: relu
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+  out_act: linear
+  standarization: normal
+train_config:
+  batch_size: 100
+  epochs: 30
+  verbose: true
+
+2020-06-24 11:14:19,067: INFO): using checkpoint: checkpoint.pkz
+2020-06-24 11:14:19,791: INFO): checkpoint loaded
+2020-06-24 11:14:20,421: INFO): Constant cols eliminated
+2020-06-24 11:14:20,421: INFO): data shapes: [(17526, 512), (17526, 512), (17526, 181), (17526, 47), (17526, 505)]
+2020-06-24 11:14:20,421: INFO): Normal standarization of Y
+2020-06-24 11:14:20,421: INFO): Fold 0
+2020-06-24 11:14:35,862: INFO): 'RR's permutation test (input 4): Before:   17.695  After:  18.636
+2020-06-24 11:14:35,862: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-24 11:14:35,862: INFO): MAE:   17.308 (   0.000)
+2020-06-24 11:14:35,878: INFO): Best epoch: 8
+2020-06-24 11:14:35,878: INFO): CV AV:   23.295
+2020-06-24 11:14:35,878: INFO): CV std    0.000

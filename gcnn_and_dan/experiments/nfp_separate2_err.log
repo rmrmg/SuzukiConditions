@@ -1,0 +1,28 @@
+2020-06-10 13:43:57.929664: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Using TensorFlow backend.
+/home/wbeker/miniconda3/envs/my-rdkit-env/lib/python3.6/site-packages/tensorflow/python/ops/gradients_impl.py:98: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+Traceback (most recent call last):
+  File "solvents_mlp_cv2.py", line 438, in <module>
+    p=baseline(model_config, Xtrain, t, Xtest, Ytest[i], graph=args.graph)
+  File "solvents_mlp_cv2.py", line 304, in baseline
+    model.fit(xtrain, ytrain, sample_weight=w, epochs=epochs, batch_size=batch, verbose=True)
+  File "/home/wbeker/miniconda3/envs/my-rdkit-env/lib/python3.6/site-packages/keras/engine/training.py", line 1039, in fit
+    validation_steps=validation_steps)
+  File "/home/wbeker/miniconda3/envs/my-rdkit-env/lib/python3.6/site-packages/keras/engine/training_arrays.py", line 199, in fit_loop
+    outs = f(ins_batch)
+  File "/home/wbeker/miniconda3/envs/my-rdkit-env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py", line 2721, in __call__
+    return self._legacy_call(inputs)
+  File "/home/wbeker/miniconda3/envs/my-rdkit-env/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py", line 2693, in _legacy_call
+    **self.session_kwargs)
+  File "/home/wbeker/miniconda3/envs/my-rdkit-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 905, in run
+    run_metadata_ptr)
+  File "/home/wbeker/miniconda3/envs/my-rdkit-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1137, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/wbeker/miniconda3/envs/my-rdkit-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1355, in _do_run
+    options, run_metadata)
+  File "/home/wbeker/miniconda3/envs/my-rdkit-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1361, in _do_call
+    return fn(*args)
+  File "/home/wbeker/miniconda3/envs/my-rdkit-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1340, in _run_fn
+    target_list, status, run_metadata)
+KeyboardInterrupt

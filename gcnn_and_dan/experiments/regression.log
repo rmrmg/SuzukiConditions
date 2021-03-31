@@ -1,0 +1,314 @@
+2020-06-23 15:34:39,084: INFO): START
+2020-06-23 15:34:39,085: INFO): command line arguments:
+chk: null
+config: null
+log: regression.log
+one_fold: false
+
+2020-06-23 15:34:52,286: INFO): START
+2020-06-23 15:34:52,286: INFO): command line arguments:
+chk: null
+config: null
+log: regression.log
+one_fold: false
+
+2020-06-23 15:34:52,287: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_preprocessed_data.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+train_config:
+  batch_size: 100
+  epochs: 100
+
+2020-06-23 15:34:52,287: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 15:35:22,056: INFO): START
+2020-06-23 15:35:22,056: INFO): command line arguments:
+chk: null
+config: null
+log: regression.log
+one_fold: false
+
+2020-06-23 15:35:22,057: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+train_config:
+  batch_size: 100
+  epochs: 100
+
+2020-06-23 15:35:22,057: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 15:36:02,298: INFO): START
+2020-06-23 15:36:02,299: INFO): command line arguments:
+chk: null
+config: null
+log: regression.log
+one_fold: false
+
+2020-06-23 15:36:02,300: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+train_config:
+  batch_size: 100
+  epochs: 100
+
+2020-06-23 15:36:02,300: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 15:36:32,614: INFO): START
+2020-06-23 15:36:32,614: INFO): command line arguments:
+chk: null
+config: null
+log: regression.log
+one_fold: false
+
+2020-06-23 15:36:32,615: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+train_config:
+  batch_size: 100
+  epochs: 100
+
+2020-06-23 15:36:32,615: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 15:36:33,326: INFO): checkpoint loaded
+2020-06-23 15:36:33,326: INFO): data loaded
+2020-06-23 15:36:33,965: INFO): Constant cols eliminated
+2020-06-23 15:36:33,965: INFO): Fold 0
+2020-06-23 16:30:43,896: INFO): START
+2020-06-23 16:30:43,896: INFO): command line arguments:
+chk: null
+config: null
+log: regression.log
+one_fold: false
+
+2020-06-23 16:30:43,897: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+train_config:
+  batch_size: 100
+  epochs: 100
+
+2020-06-23 16:30:43,897: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 16:30:44,608: INFO): checkpoint loaded
+2020-06-23 16:30:44,608: INFO): data loaded
+2020-06-23 16:30:45,208: INFO): Constant cols eliminated
+2020-06-23 16:30:45,208: INFO): Fold 0
+2020-06-23 16:31:12,346: INFO): START
+2020-06-23 16:31:12,347: INFO): command line arguments:
+chk: null
+config: null
+log: regression.log
+one_fold: false
+
+2020-06-23 16:31:12,348: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+train_config:
+  batch_size: 100
+  epochs: 100
+
+2020-06-23 16:31:12,348: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 16:31:13,054: INFO): checkpoint loaded
+2020-06-23 16:31:13,054: INFO): data loaded
+2020-06-23 16:31:13,657: INFO): Constant cols eliminated
+2020-06-23 16:31:13,657: INFO): Fold 0
+2020-06-23 16:31:55,392: INFO): START
+2020-06-23 16:31:55,392: INFO): command line arguments:
+chk: null
+config: null
+log: regression.log
+one_fold: false
+
+2020-06-23 16:31:55,393: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+train_config:
+  batch_size: 100
+  epochs: 100
+
+2020-06-23 16:31:55,394: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 16:31:56,103: INFO): checkpoint loaded
+2020-06-23 16:31:56,103: INFO): data loaded
+2020-06-23 16:31:56,709: INFO): Constant cols eliminated
+2020-06-23 16:31:56,710: INFO): Fold 0
+2020-06-23 16:32:36,798: INFO): START
+2020-06-23 16:32:36,799: INFO): command line arguments:
+chk: null
+config: null
+log: regression.log
+one_fold: false
+
+2020-06-23 16:32:36,800: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+train_config:
+  batch_size: 100
+  epochs: 100
+  verbose: true
+
+2020-06-23 16:32:36,800: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 16:32:37,512: INFO): checkpoint loaded
+2020-06-23 16:32:37,512: INFO): data loaded
+2020-06-23 16:32:38,125: INFO): Constant cols eliminated
+2020-06-23 16:32:38,125: INFO): Fold 0
+2020-06-23 16:33:26,714: INFO): Fold 1
+2020-06-23 16:34:15,421: INFO): Fold 2
+2020-06-23 16:35:04,456: INFO): Fold 3
+2020-06-23 16:35:54,010: INFO): Fold 4
+2020-06-23 16:36:43,862: INFO): CV AV:  428.985
+2020-06-23 16:36:43,862: INFO): CV std   62.932

@@ -1,0 +1,179 @@
+2020-06-23 16:48:40,905: INFO): START
+2020-06-23 16:48:40,905: INFO): command line arguments:
+chk: null
+config: null
+log: vanilla_nn_regressor.log
+one_fold: false
+
+2020-06-23 16:48:40,906: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  act1: relu
+  act2: relu
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+  out_act: sigmoid
+train_config:
+  batch_size: 100
+  epochs: 100
+  verbose: true
+
+2020-06-23 16:48:40,907: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 16:48:41,613: INFO): checkpoint loaded
+2020-06-23 16:48:41,614: INFO): data loaded
+2020-06-23 16:48:42,238: INFO): Constant cols eliminated
+2020-06-23 16:48:42,238: INFO): Fold 0
+2020-06-23 16:49:07,132: INFO): START
+2020-06-23 16:49:07,133: INFO): command line arguments:
+chk: null
+config: null
+log: vanilla_nn_regressor.log
+one_fold: false
+
+2020-06-23 16:49:07,134: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  act1: relu
+  act2: relu
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+  out_act: sigmoid
+train_config:
+  batch_size: 100
+  epochs: 100
+  verbose: true
+
+2020-06-23 16:49:07,134: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 16:49:07,863: INFO): checkpoint loaded
+2020-06-23 16:49:07,863: INFO): data loaded
+2020-06-23 16:49:08,504: INFO): Constant cols eliminated
+2020-06-23 16:49:08,504: INFO): Fold 0
+2020-06-23 16:53:27,275: INFO): START
+2020-06-23 16:53:27,275: INFO): command line arguments:
+chk: null
+config: null
+log: vanilla_nn_regressor.log
+one_fold: false
+
+2020-06-23 16:53:27,276: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  act1: relu
+  act2: relu
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+  out_act: sigmoid
+train_config:
+  batch_size: 100
+  epochs: 100
+  verbose: true
+
+2020-06-23 16:53:27,277: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 16:53:27,993: INFO): checkpoint loaded
+2020-06-23 16:53:27,993: INFO): data loaded
+2020-06-23 16:53:28,619: INFO): Constant cols eliminated
+2020-06-23 16:53:41,034: INFO): START
+2020-06-23 16:53:41,035: INFO): command line arguments:
+chk: null
+config: null
+log: vanilla_nn_regressor.log
+one_fold: false
+
+2020-06-23 16:53:41,036: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  - ligand
+  output: yield
+model_config:
+  act1: relu
+  act2: relu
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+  out_act: sigmoid
+train_config:
+  batch_size: 100
+  epochs: 100
+  verbose: true
+
+2020-06-23 16:53:41,036: INFO): using checkpoint: checkpoint.pkz
+2020-06-23 16:53:41,768: INFO): checkpoint loaded
+2020-06-23 16:53:41,768: INFO): data loaded
+2020-06-23 16:53:42,420: INFO): Constant cols eliminated
+2020-06-23 16:53:42,420: INFO): Min-max standarization of Y
+2020-06-23 16:53:42,420: INFO): Fold 0
+2020-06-23 16:54:31,856: INFO): Fold 1
+2020-06-23 16:55:22,206: INFO): Fold 2
+2020-06-23 16:56:12,720: INFO): Fold 3
+2020-06-23 16:57:05,301: INFO): Fold 4
+2020-06-23 16:57:57,036: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 16:57:57,036: INFO): CV AV:   21.150
+2020-06-23 16:57:57,036: INFO): CV std    1.647

@@ -1,0 +1,264 @@
+2020-06-23 20:28:06,822: INFO): START
+2020-06-23 20:28:07,353: INFO): tpe_transform took 0.002913 seconds
+2020-06-23 20:28:07,353: INFO): TPE using 0 trials
+2020-06-23 20:28:07,645: INFO): Constant cols eliminated
+2020-06-23 20:28:07,645: INFO): data shapes: [(8763, 512), (8763, 512), (8763, 165), (8763, 47), (8763, 504)]
+2020-06-23 20:28:07,645: INFO): Normal standarization of Y
+2020-06-23 20:28:07,645: INFO): Fold 0
+2020-06-23 20:28:59,014: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 20:28:59,021: INFO): Stats: Epoch: 35, MSE:   94.142
+2020-06-23 20:28:59,022: INFO): Adjustable parameters:
+act1: elu
+act2: elu
+batchnorm: true
+dropout: 0.6070179258843946
+hidden1: 50
+hidden2: 100
+l2val: 0.6517968154887782
+loss: mse
+merge: concat
+n_layers1: 1
+n_layers2: 3
+out_act: sigmoid
+
+2020-06-23 20:28:59,022: INFO): Training parameters:
+batch_size: 64
+epochs: 100
+
+2020-06-23 20:28:59,026: INFO): tpe_transform took 0.003587 seconds
+2020-06-23 20:28:59,026: INFO): TPE using 1/1 trials with best loss 94.141802
+2020-06-23 20:28:59,316: INFO): Constant cols eliminated
+2020-06-23 20:28:59,316: INFO): data shapes: [(8763, 512), (8763, 512), (8763, 165), (8763, 47), (8763, 504)]
+2020-06-23 20:28:59,317: INFO): Normal standarization of Y
+2020-06-23 20:28:59,317: INFO): Fold 0
+2020-06-23 20:30:23,272: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 20:30:23,276: INFO): Stats: Epoch: 149, MSE:   92.829
+2020-06-23 20:30:23,277: INFO): Adjustable parameters:
+act1: relu
+act2: elu
+batchnorm: false
+dropout: 0.10666386083084903
+hidden1: 100
+hidden2: 100
+l2val: 0.42522861686845626
+loss: mse
+merge: concat
+n_layers1: 1
+n_layers2: 1
+out_act: sigmoid
+
+2020-06-23 20:30:23,277: INFO): Training parameters:
+batch_size: 32
+epochs: 150
+
+2020-06-23 20:30:23,281: INFO): tpe_transform took 0.003426 seconds
+2020-06-23 20:30:23,281: INFO): TPE using 2/2 trials with best loss 92.829394
+2020-06-23 20:30:23,555: INFO): Constant cols eliminated
+2020-06-23 20:30:23,555: INFO): data shapes: [(8763, 512), (8763, 512), (8763, 165), (8763, 47), (8763, 504)]
+2020-06-23 20:30:23,556: INFO): Normal standarization of Y
+2020-06-23 20:30:23,556: INFO): Fold 0
+2020-06-23 20:30:46,414: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 20:30:46,417: INFO): Stats: Epoch: 49, MSE:   92.873
+2020-06-23 20:30:46,418: INFO): Adjustable parameters:
+act1: tanh
+act2: tanh
+batchnorm: false
+dropout: 0.6831155376647028
+hidden1: 100
+hidden2: 100
+l2val: 0.288662535902546
+loss: mse
+merge: concat
+n_layers1: 2
+n_layers2: 2
+out_act: sigmoid
+
+2020-06-23 20:30:46,418: INFO): Training parameters:
+batch_size: 64
+epochs: 50
+
+2020-06-23 20:30:46,422: INFO): tpe_transform took 0.002994 seconds
+2020-06-23 20:30:46,422: INFO): TPE using 3/3 trials with best loss 92.829394
+2020-06-23 20:30:46,707: INFO): Constant cols eliminated
+2020-06-23 20:30:46,707: INFO): data shapes: [(8763, 512), (8763, 512), (8763, 165), (8763, 47), (8763, 504)]
+2020-06-23 20:30:46,708: INFO): Normal standarization of Y
+2020-06-23 20:30:46,708: INFO): Fold 0
+2020-06-23 20:31:18,430: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 20:31:18,433: INFO): Stats: Epoch: 44, MSE:   93.757
+2020-06-23 20:31:18,434: INFO): Adjustable parameters:
+act1: elu
+act2: elu
+batchnorm: true
+dropout: 0.6985318844943431
+hidden1: 100
+hidden2: 50
+l2val: 0.8444244099007299
+loss: mse
+merge: concat
+n_layers1: 1
+n_layers2: 4
+out_act: sigmoid
+
+2020-06-23 20:31:18,434: INFO): Training parameters:
+batch_size: 64
+epochs: 50
+
+2020-06-23 20:31:18,438: INFO): tpe_transform took 0.003347 seconds
+2020-06-23 20:31:18,438: INFO): TPE using 4/4 trials with best loss 92.829394
+2020-06-23 20:31:18,726: INFO): Constant cols eliminated
+2020-06-23 20:31:18,726: INFO): data shapes: [(8763, 512), (8763, 512), (8763, 165), (8763, 47), (8763, 504)]
+2020-06-23 20:31:18,726: INFO): Normal standarization of Y
+2020-06-23 20:31:18,726: INFO): Fold 0
+2020-06-23 20:34:10,272: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 20:34:10,277: INFO): Stats: Epoch: 142, MSE:   92.833
+2020-06-23 20:34:10,277: INFO): Adjustable parameters:
+act1: elu
+act2: elu
+batchnorm: true
+dropout: 0.6719643482032214
+hidden1: 50
+hidden2: 150
+l2val: 0.5838315653286106
+loss: mse
+merge: concat
+n_layers1: 4
+n_layers2: 4
+out_act: sigmoid
+
+2020-06-23 20:34:10,278: INFO): Training parameters:
+batch_size: 64
+epochs: 150
+
+2020-06-23 20:34:10,281: INFO): tpe_transform took 0.002999 seconds
+2020-06-23 20:34:10,281: INFO): TPE using 5/5 trials with best loss 92.829394
+2020-06-23 20:34:10,571: INFO): Constant cols eliminated
+2020-06-23 20:34:10,571: INFO): data shapes: [(8763, 512), (8763, 512), (8763, 165), (8763, 47), (8763, 504)]
+2020-06-23 20:34:10,571: INFO): Normal standarization of Y
+2020-06-23 20:34:10,571: INFO): Fold 0
+2020-06-23 20:34:47,961: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 20:34:47,965: INFO): Stats: Epoch: 27, MSE:   93.395
+2020-06-23 20:34:47,966: INFO): Adjustable parameters:
+act1: tanh
+act2: relu
+batchnorm: true
+dropout: 0.21424545290428065
+hidden1: 50
+hidden2: 50
+l2val: 0.7428344092396598
+loss: mse
+merge: concat
+n_layers1: 2
+n_layers2: 3
+out_act: sigmoid
+
+2020-06-23 20:34:47,966: INFO): Training parameters:
+batch_size: 64
+epochs: 50
+
+2020-06-23 20:34:47,969: INFO): tpe_transform took 0.003314 seconds
+2020-06-23 20:34:47,970: INFO): TPE using 6/6 trials with best loss 92.829394
+2020-06-23 20:34:48,272: INFO): Constant cols eliminated
+2020-06-23 20:34:48,272: INFO): data shapes: [(8763, 512), (8763, 512), (8763, 165), (8763, 47), (8763, 504)]
+2020-06-23 20:34:48,272: INFO): Normal standarization of Y
+2020-06-23 20:34:48,272: INFO): Fold 0
+2020-06-23 20:36:24,346: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 20:36:24,350: INFO): Stats: Epoch: 149, MSE:   92.830
+2020-06-23 20:36:24,351: INFO): Adjustable parameters:
+act1: tanh
+act2: relu
+batchnorm: false
+dropout: 0.19693689448407875
+hidden1: 100
+hidden2: 50
+l2val: 0.10530729142803252
+loss: mse
+merge: concat
+n_layers1: 3
+n_layers2: 4
+out_act: sigmoid
+
+2020-06-23 20:36:24,351: INFO): Training parameters:
+batch_size: 64
+epochs: 150
+
+2020-06-23 20:36:24,355: INFO): tpe_transform took 0.003410 seconds
+2020-06-23 20:36:24,355: INFO): TPE using 7/7 trials with best loss 92.829394
+2020-06-23 20:36:24,647: INFO): Constant cols eliminated
+2020-06-23 20:36:24,647: INFO): data shapes: [(8763, 512), (8763, 512), (8763, 165), (8763, 47), (8763, 504)]
+2020-06-23 20:36:24,647: INFO): Normal standarization of Y
+2020-06-23 20:36:24,647: INFO): Fold 0
+2020-06-23 20:38:11,521: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 20:38:11,526: INFO): Stats: Epoch: 97, MSE:   92.832
+2020-06-23 20:38:11,526: INFO): Adjustable parameters:
+act1: relu
+act2: elu
+batchnorm: false
+dropout: 0.2759626131796952
+hidden1: 0
+hidden2: 150
+l2val: 0.08078306361277332
+loss: mse
+merge: concat
+n_layers1: 3
+n_layers2: 3
+out_act: sigmoid
+
+2020-06-23 20:38:11,527: INFO): Training parameters:
+batch_size: 32
+epochs: 100
+
+2020-06-23 20:38:11,530: INFO): tpe_transform took 0.003067 seconds
+2020-06-23 20:38:11,530: INFO): TPE using 8/8 trials with best loss 92.829394
+2020-06-23 20:38:11,809: INFO): Constant cols eliminated
+2020-06-23 20:38:11,809: INFO): data shapes: [(8763, 512), (8763, 512), (8763, 165), (8763, 47), (8763, 504)]
+2020-06-23 20:38:11,809: INFO): Normal standarization of Y
+2020-06-23 20:38:11,809: INFO): Fold 0
+2020-06-23 20:39:44,930: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 20:39:44,933: INFO): Stats: Epoch: 92, MSE:   92.831
+2020-06-23 20:39:44,934: INFO): Adjustable parameters:
+act1: tanh
+act2: tanh
+batchnorm: false
+dropout: 0.4972288957952379
+hidden1: 100
+hidden2: 100
+l2val: 0.6257491042113806
+loss: mse
+merge: concat
+n_layers1: 2
+n_layers2: 1
+out_act: sigmoid
+
+2020-06-23 20:39:44,934: INFO): Training parameters:
+batch_size: 32
+epochs: 100
+
+2020-06-23 20:39:44,938: INFO): tpe_transform took 0.003045 seconds
+2020-06-23 20:39:44,938: INFO): TPE using 9/9 trials with best loss 92.829394
+2020-06-23 20:39:45,218: INFO): Constant cols eliminated
+2020-06-23 20:39:45,218: INFO): data shapes: [(8763, 512), (8763, 512), (8763, 165), (8763, 47), (8763, 504)]
+2020-06-23 20:39:45,218: INFO): Normal standarization of Y
+2020-06-23 20:39:45,219: INFO): Fold 0
+2020-06-23 20:40:29,726: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-23 20:40:29,729: INFO): Stats: Epoch: 149, MSE:   92.837
+2020-06-23 20:40:29,730: INFO): Adjustable parameters:
+act1: relu
+act2: elu
+batchnorm: false
+dropout: 0.5467774304035248
+hidden1: 0
+hidden2: 100
+l2val: 0.20942239619394942
+loss: mse
+merge: concat
+n_layers1: 0
+n_layers2: 2
+out_act: sigmoid
+
+2020-06-23 20:40:29,730: INFO): Training parameters:
+batch_size: 128
+epochs: 150
+
+2020-06-23 20:40:29,732: INFO): Best performing model chosen hyper-parameters:
+2020-06-23 20:40:29,732: INFO): {'act1': 'relu', 'act1_1': 'elu', 'batch_size': 32, 'batchnorm': False, 'dropout': 0.10666386083084903, 'epochs': 150, 'hidden1': 100, 'hidden2': 100, 'l2val': 0.42522861686845626, 'n_layers1': 1, 'n_layers2': 1}
+2020-06-23 20:40:29,733: INFO): Trials saved

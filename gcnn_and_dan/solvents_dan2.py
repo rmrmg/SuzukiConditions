@@ -1,0 +1,373 @@
+from sklearn.model_selection import train_test_split, KFold
+from sklearn.metrics import confusion_matrix
+import gzip
+import pickle as pic
+from sklearn.utils.class_weight import compute_sample_weight
+import numpy as np
+from keras.models import Model
+from keras.layers import Input, Dense, Dropout, BatchNormalization, Lambda
+from keras.regularizers import l2
+from keras.optimizers import Adam
+from keras import backend as K
+from functools import partial
+import logging
+
+def make_dataset(test_config={}):
+   noise = test_config.get('noise', 0.15)
+   size = test_config.get('size',10000)
+   factor = test_config.get('factor',0.3)
+   x,y = make_moons(size, noise=noise)
+   x2, y2 = make_circles(size, noise=noise, factor=factor)
+   return np.hstack([x,x2]), np.hstack([y.reshape(-1,1), y2.reshape(-1,1)])
+
+
+def relabel_positive(y, fraction=0.1):
+   if len(y.shape)==2:
+      Ncol=y.shape[1]
+      return np.hstack([relabel_positive(y[:,i], fraction).reshape(-1,1) for i in range(Ncol)])
+   positive_idx = np.where(y==1)[0]
+   sample = int(len(positive_idx)*fraction)
+   to_change = np.random.choice(positive_idx, sample, replace=False)
+   y2 = np.ones(y.shape).astype(int)*y
+   y2[to_change] = 0
+   return y2
+
+
+def Jpen(y_pred, y_true):
+   log_phi_p = K.sum(K.log(y_pred)*y_true, axis=0)/(K.sum(y_true,axis=0)+K.epsilon())
+   log_phi = K.log(K.mean(y_pred, axis=0))
+   return K.sum((1-log_phi_p)/(K.epsilon() + K.relu(log_phi_p-log_phi)))
+
+log4 = K.log(4.0)
+
+#for phi, D goes as sample_weights
+def phi_loss(y_true, y_pred, sample_weights):
+   J = (K.sum((y_pred*K.log(1-sample_weights)), axis=0) + log4)/(K.sum(y_pred, axis=0)+K.epsilon())
+   J = K.abs(J)*Jpen(y_pred, y_true)
+   return K.sum(J)
+
+nprelu = lambda x: np.where(x>0,x,0)
+
+def Jpen2(y_pred, y_true):
+   log_phi_p = np.sum(np.log(y_pred+K.epsilon())*y_true, axis=0)/(np.sum(y_true,axis=0)+K.epsilon())
+   log_phi = np.log(np.mean(y_pred, axis=0)+K.epsilon())
+   return (1-log_phi_p)/(K.epsilon() + nprelu(log_phi_p-log_phi))
+
+
+def phi_loss2(y_true, y_pred, sample_weights):
+   J = (np.sum((y_pred*np.log(1-sample_weights+K.epsilon())), axis=0) + log4)/(np.sum(y_pred, axis=0)+K.epsilon())
+   J = np.abs(J)*Jpen2(y_pred, y_true)
+   return J
+
+
+#for D, phi goes as sample_weights
+def d_loss(y_true, y_pred, sample_weights):
+   BP = K.sum(K.log(y_pred)*y_true, axis=0)/(K.sum(y_true, axis=0) + K.epsilon())
+   BX = K.sum(K.log(1-y_pred)*sample_weights, axis=0)/(K.sum(sample_weights, axis=0) + K.epsilon())
+   return K.sum(-(BP+BX))
+
+
+def d_loss2(y_true, y_pred, sample_weights):
+   BP = np.sum(np.log(y_pred+K.epsilon())*y_true, axis=0)/(np.sum(y_true, axis=0)+K.epsilon())
+   BX = np.sum(np.log(1-y_pred+K.epsilon())*sample_weights, axis=0)/(np.sum(sample_weights, axis=0)+K.epsilon())
+   return -(BP+BX)
+
+
+def make_uncompiled_mlp(model_config):
+   input_size = model_config.get('input_size', 2048)
+   output_size = model_config.get('output_size', 1)
+   n_layers = model_config.get('layers', 1)
+   n_hidden = model_config.get('hidden',128)
+   drp = model_config.get('dropout', 0.2)
+   l2_val = model_config.get('l2val', 0.001)
+   act_hidden = model_config.get('activation_hidden', 'relu')
+    
+   I = Input(shape=(input_size,))
+   h = Dense(n_hidden, kernel_regularizer=l2(l2_val), activation=act_hidden)(I)
+   h = Dropout(drp)(h)
+   for _ in range(n_layers-1):
+      h = Dense(n_hidden, kernel_regularizer=l2(l2_val), activation=act_hidden)(h)
+      h = BatchNormalization()(h)
+      h = Dropout(drp)(h)
+   out = Dense(output_size, activation='sigmoid', kernel_regularizer=l2(l2_val))(h)
+
+   return Model(inputs=I, outputs=out)
+
+
+def make_dan_pair(model_config):
+   phi_model = make_uncompiled_mlp(model_config)
+   #phi_model.compile(optimizer='adam', loss=phi_loss)
+   phi_w = Input(shape=(None,))
+   philoss = partial(phi_loss, sample_weights=phi_w)
+   phi_wrapped = Model([phi_model.inputs[0], phi_w], phi_model.outputs[0])
+   phi_wrapped.compile(optimizer='adam', loss=philoss)
+
+   d_w = Input(shape=(None,))
+   dloss = partial(d_loss, sample_weights=d_w)
+   d_mlp = make_uncompiled_mlp(model_config)
+   d_model = Model([d_mlp.inputs[0], d_w], d_mlp.outputs[0])
+   d_model.compile(optimizer='adam', loss=dloss)
+    
+   return phi_model, phi_wrapped, d_mlp, d_model
+
+   
+def make_dan_iteration(model_phi, model_phi_wrapped, _, model_d, Xtrain, ytrain, train_config={}):
+   epochs = train_config.get('epochs', 1)
+   batch = train_config.get('batch', 100)
+    
+   phi_pred = model_phi.predict(Xtrain)
+   
+   #print(phi_pred.mean())
+   #print(model_d.evaluate([Xtrain, phi_pred], ytrain))
+   pd=model_d.predict([Xtrain, phi_pred])
+   #print('disc: ',pd.mean())
+   #print('dloss: ',d_loss2(ytrain, pd, phi_pred))
+
+   #logging.info('Discriminator:')
+   model_d.fit([Xtrain, phi_pred], ytrain, epochs=epochs, batch_size=batch, verbose=False)
+   d_pred = model_d.predict([Xtrain, phi_pred])
+   
+   #logging.info('Predictor:')
+   #print(d_pred.mean())
+   #print(Jpen2(ytrain,phi_pred))
+   #print(phi_loss2(ytrain, phi_pred, d_pred))
+
+   history = model_phi_wrapped.fit([Xtrain, d_pred], ytrain, epochs=epochs, batch_size=batch, verbose=False)
+   return history.history['loss'][-1]
+
+
+#more accurate
+
+def dummy_loss(y_true, y_pred):
+   return y_pred
+
+def make_dan_pair2(model_config):
+   #PHI
+   input_size = model_config.get('input_size', 2)
+   input_phi_P, input_phi_X, input_phi_D_on_X = [Input(shape=(size,)) for size in [input_size,input_size,1]]
+    
+   phi_model = make_uncompiled_mlp(model_config)
+   phi_on_P = phi_model(input_phi_P)
+   phi_on_X = phi_model(input_phi_X)
+   phi_Jdist = Lambda(lambda x: K.sum(K.log(1-x[1])*x[0], axis=0)/K.sum(x[0], axis=0))([phi_on_X, input_phi_D_on_X])
+    
+   #penalty
+   mean_P_log_phi = Lambda(lambda x: K.mean(K.log(x), axis=0))(phi_on_P)
+   log_mean_X_phi = Lambda(lambda x: K.log(K.mean(x, axis=0)))(phi_on_X)
+   phi_Jpen = Lambda(lambda x: (1-x[0])/(K.relu(x[0]-x[1])+K.epsilon()))([mean_P_log_phi, log_mean_X_phi])
+   phi_loss_val = Lambda(lambda x: K.mean(K.abs(x[0]+log4)*x[1]))([phi_Jdist, phi_Jpen])
+    
+   phi_wrapped = Model([input_phi_P, input_phi_X, input_phi_D_on_X], phi_loss_val)
+   phi_wrapped.compile(optimizer=Adam(beta_1=0.5, beta_2=0.99), loss=dummy_loss)
+     
+   #D
+   input_d_P, input_d_X, input_d_phi_on_X = [Input(shape=(size,)) for size in [input_size,input_size,1]]
+   d_mlp = make_uncompiled_mlp(model_config)
+   d_on_X = d_mlp(input_d_X)
+   d_on_P = d_mlp(input_d_P)
+   d_loss_val = Lambda(lambda x: -K.mean((K.mean(K.log(x[0]),axis=0) + K.sum(x[1]*x[2], axis=0)/K.sum(x[2],axis=0))) )([d_on_P, d_on_X, input_d_phi_on_X])
+     
+   d_model = Model([input_d_P, input_d_X, input_d_phi_on_X], d_loss_val)
+   d_model.compile(optimizer=Adam(beta_1=0.5, beta_2=0.99), loss=dummy_loss)
+    
+   return phi_model, phi_wrapped, d_mlp, d_model
+
+
+def make_dan_iteration2(model_phi, model_phi_wrapped, d_mlp, model_d, Xtrain, ytrain, train_config={}):
+   #select batch
+   batch = train_config.get('batch', 100)
+   P_idx = np.where(ytrain==1)[0]
+   all_idx = np.arange(len(ytrain))
+    
+   Xi = np.random.choice(all_idx, batch, replace=False)
+   Pi = np.random.choice(P_idx, batch, replace=False)
+   X = Xtrain[Xi]
+   P = Xtrain[Pi]
+
+   phi_pred = model_phi.predict(X)
+   
+   model_d.train_on_batch([P, X, phi_pred], Xi)
+   d_pred = d_mlp.predict(X)
+   
+   val_loss = model_phi_wrapped.train_on_batch([P, X, d_pred], Xi)
+   return val_loss
+
+
+def tpr_tnr_stats(ytrue, p):
+   try:
+      CM = confusion_matrix(ytrue, p.round(0))
+   except:
+      return 0,0,0,0,0
+
+   TN = CM[0][0]
+   FN = CM[1][0]
+   TP = CM[1][1]
+   FP = CM[0][1]
+
+   tpr = TP/(TP+FN)
+   tnr = TN/(TN+FP)
+   bacc = 0.5*(tpr+tnr)
+   tot = (TP+TN+FP+FN)
+   acc = (TP+TN)/tot
+   p = (TP+FP)/tot
+   f = tpr**2/p
+   return tpr, tnr, acc, bacc,f
+
+
+def baseline(model_config, *train_stuff, train_config={}):
+   epochs = train_config.get('epochs', 50)
+   batch = train_config.get('batch', 100)
+   xtrain, ytrain, xtest, ytest = train_stuff
+
+   model = make_uncompiled_mlp(model_config)
+   w= compute_sample_weight('balanced', ytrain)
+   model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['acc'])
+   model.fit(xtrain, ytrain, sample_weight=w, epochs=epochs, batch_size=batch, verbose=False)
+   p=model.predict(xtest)
+   d = model.evaluate(xtest, ytest)[-1]
+   logging.info('   Accuracy: %8.3f'%d)
+
+   if len(ytest.shape)==2:
+      topk = categorical_stats(ytest,p)
+      for i,k in enumerate(topk):
+         logging.info(' top-%i: %8.3f'%(i,k))
+      ys = [ytest[:,i] for i in range(ytest.shape[1])]
+      ps = [p[:,i] for i in range(ytest.shape[1])]
+   else:
+      ys=[ytest]
+      ps=[p]
+   for i, y in enumerate(ys):   
+      tpr, tnr, acc, bacc, f = tpr_tnr_stats(y, ps[i])
+      logging.info('  OUT : %i'%(i))
+      logging.info('   TPR: %8.3f'%(tpr))
+      logging.info('   TNR: %8.3f'%(tnr))
+      logging.info('     F: %8.3f'%(f))
+      logging.info('  g_av: %8.3f'%(np.sqrt(tnr*tpr)))
+   return p
+
+
+def categorical_stats(ytrue, p):
+   topk=[0,0,0]
+   for k in range(len(topk)):
+      k_acc = np.mean([ytrue[i].argmax() in np.argsort(x)[-(k+1): ] for i,x in enumerate(p)])  
+      topk[k]=k_acc
+   return topk
+
+
+def prepare_data(name='preprocessed_data.pkz', desc=['ecfp6'], inp=['boronic','halogen'], out='solvent'):
+   with gzip.open(name, 'rb') as f: data=pic.load(f)
+   output = data['%s_enc'%out]
+   arrays=[]
+   for i in inp:
+      if i in ['solvent', 'base']:
+         arrays.append(data['%s_enc'%i])
+      else:
+         for d in desc:
+            arrays.append(data['%s_%s'%(i,d)])
+   return np.hstack(arrays), output
+
+
+if __name__=='__main__':
+   import argparse
+   parser = argparse.ArgumentParser()
+   parser.add_argument('--epochs', type=int, default=100 )
+   parser.add_argument('--report', type=int, default=10 )
+   parser.add_argument('--lr', type=float, default=0.001 )
+   parser.add_argument('--baseline', action='store_true' )
+   parser.add_argument('--random', action='store_true' )
+   parser.add_argument('--separate', action='store_true' )
+   parser.add_argument('--mode', type=int, default=1, choices=[1,2] )
+   args=parser.parse_args()
+
+   logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(message)s')   
+   #make dataset
+   X, Y = prepare_data()
+   
+   out_size = 1 if  args.separate else Y.shape[1]
+   #model_config = {'input_size':X.shape[1], 'output_size':out_size, 'layers':5, 'hidden':128, 'lr':args.lr, 'opt':'adam'}
+   model_config = {'input_size':X.shape[1], 'output_size':out_size, 'layers':3, 'hidden':256, 'lr':args.lr, 'opt':'adam'}
+
+   #true_baseline 
+   Xtrain, Xtest, Ytrain, Ytest = train_test_split(X, Y, test_size=0.2)
+   logging.info('Train class count: '+str(Ytrain.sum(axis=0)))
+   logging.info('Test class count: '+str(Ytest.sum(axis=0)))
+
+   if args.separate:
+      N=Y.shape[1]
+      Ytrain = [Ytrain[:,i] for i in range(N)]
+      Ytest = [Ytest[:,i] for i in range(N)]
+      backup = tpr_tnr_stats
+      backup_baseline = baseline
+      from dan_reference.dan import *
+      tpr_tnr_stats = backup
+      baseline = backup_baseline
+   if args.baseline:
+      logging.info('Non-relabeled baseline')
+      baseline_ps = []
+      for i,t in enumerate(Ytrain):
+         logging.info('OUT %i'%i)
+         p=baseline(model_config, Xtrain, t, Xtest, Ytest[i])
+         baseline_ps.append(p)
+      if args.separate:
+         Yref = np.hstack([x.reshape(-1,1) for x in Ytest])
+         p = np.hstack([x.reshape(-1,1) for x in baseline_ps])
+         ks = categorical_stats(Yref,p)
+         logging.info('Baseline: top-1,2,3 :%5.3f %5.3f %5.3f'%tuple(ks))
+
+
+   #DAN part
+   if args.mode==2:
+      make_dan_pair = make_dan_pair2
+      make_dan_iteration = make_dan_iteration2
+
+   res=[]
+   kf=KFold(n_splits=5)
+   for idx_train, idx_test in kf.split(X):
+      Xtrain, Xtest=X[idx_train,:], X[idx_test,:]
+      Ytrain, Ytest=Y[idx_train,:], Y[idx_test,:]
+      Ytrain = [Ytrain[:,col_idx] for col_idx in range(Y.shape[1])]
+      Ytest = [Ytest[:,col_idx] for col_idx in range(Y.shape[1])]
+      all_ps=[]
+      for i,t in enumerate(Ytrain):
+         phi, phi_wr, d_mlp, disc = make_dan_pair(model_config)
+         phi.compile(optimizer='adam', loss='binary_crossentropy', metrics=['acc'])
+         phi.fit(Xtrain, t, epochs=5, batch_size=100, verbose=False)
+         logging.info('order: tpr tnr bacc f')
+         for meta_epoch in range(args.epochs):
+            loss= make_dan_iteration(phi, phi_wr, d_mlp, disc, Xtrain, t)
+            ptrain = phi.predict(Xtrain)
+            ptest = phi.predict(Xtest)
+            #norm = ptrain.max()
+            #print(norm)
+            #ptrain/=norm
+            #ptest/=norm
+            if len(Ytest[i].shape)==2:
+               set_train = [(Ytrain[:,i], ptrain[:,i]) for i in range(Ytest.shape[1])]
+               set_test = [(Ytest[:,i], ptest[:,i]) for i in range(Ytest.shape[1])]
+            else:
+               set_train = [(t, ptrain)]
+               set_test = [(Ytest[i], ptest)]
+      
+            if meta_epoch%args.report==0:
+               for i, train_result in enumerate(set_train):
+                  train_stats = tpr_tnr_stats(*train_result)
+                  test_stats = tpr_tnr_stats(*set_test[i])
+                  logging.info('ME: %5i out:%i loss:%7.4f  train: %5.3f %5.3f %5.3f f:%5.3f  test: %5.3f %5.3f %5.3f f:%5.3f'%(
+                  meta_epoch, i, loss, train_stats[0], train_stats[1], train_stats[3], train_stats[4], test_stats[0], test_stats[1], test_stats[3], test_stats[4]))
+               if not args.separate:
+                  ktop_train = categorical_stats(Ytrain, ptrain)
+                  ktop_test = categorical_stats(Ytest, ptest)
+                  logging.info('      top-1,2,3  train: %5.3f %5.3f %5.3f test: %5.3f %5.3f %5.3f '%tuple(ktop_train+ktop_test))
+         
+         all_ps.append(ptest)
+      if args.separate:   
+         Yref = np.hstack([x.reshape(-1,1) for x in Ytest])
+         p = np.hstack([x.reshape(-1,1) for x in all_ps])
+         ks = categorical_stats(Yref,p)
+         res.append(ks)
+         logging.info('Final: top-1,2,3 :%5.3f %5.3f %5.3f'%tuple(ks))
+   
+   logging.info('CV TOP-K: %s'%str(np.mean(res,axis=0)))
+   logging.info('CV TOP-K std: %s'%str(np.std(res,axis=0)))
+   
+   

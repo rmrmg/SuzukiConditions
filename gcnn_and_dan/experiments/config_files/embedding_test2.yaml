@@ -1,0 +1,36 @@
+loader_config:
+  checkpoint: embedding1_chk.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen  #0
+  - boronic  #1
+  - solvent  #2
+  - base     #3
+  - ligand   #4
+  output: yield
+model_config:
+  act1: relu
+  act2: relu
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 64
+  hidden2: 128
+  inter_act: linear
+  inter_hidden: 10
+  inter_idx: 
+     - [0, 1]
+     - [2, 3, 4]
+  inter_layers: 1
+  l2val: 0.001
+  loss: mse
+  merge: mult
+  n_layers1: 1
+  n_layers2: 1
+  out_act: linear
+  standarization: normal
+train_config:
+  batch_size: 100
+  epochs: 10
+  verbose: true

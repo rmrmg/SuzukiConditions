@@ -1,0 +1,111 @@
+2020-06-24 12:03:48,565: INFO): START
+2020-06-24 12:03:48,566: INFO): command line arguments:
+chk: null
+config: experiments/config_files/vanilla_no_lig.yaml
+epochs: 15
+log: standard_regressor_no_lig.log
+one_fold: false
+permute: null
+
+2020-06-24 12:03:48,570: INFO): Config:
+loader_config:
+  checkpoint: checkpoint.pkz
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  output: yield
+model_config:
+  act1: relu
+  act2: relu
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+  out_act: linear
+  standarization: normal
+train_config:
+  batch_size: 100
+  epochs: 15
+  verbose: true
+
+2020-06-24 12:03:48,570: INFO): using checkpoint: checkpoint.pkz
+2020-06-24 12:03:49,322: INFO): checkpoint loaded
+2020-06-24 12:03:49,953: INFO): Constant cols eliminated
+2020-06-24 12:03:49,953: INFO): data shapes: [(17526, 512), (17526, 512), (17526, 181), (17526, 47), (17526, 505)]
+2020-06-24 12:03:49,953: INFO): Normal standarization of Y
+2020-06-24 12:03:49,953: INFO): Fold 0
+2020-06-24 12:03:58,330: INFO): Fold 1
+2020-06-24 12:04:06,785: INFO): Fold 2
+2020-06-24 12:04:15,262: INFO): Fold 3
+2020-06-24 12:04:23,882: INFO): Fold 4
+2020-06-24 12:04:32,688: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-24 12:04:32,688: INFO): MAE:   15.993 (   1.766)
+2020-06-24 12:04:32,702: INFO): Best epoch: 4
+2020-06-24 12:04:32,702: INFO): CV AV:   21.787
+2020-06-24 12:04:32,702: INFO): CV std    1.887
+2020-06-24 12:10:57,953: INFO): START
+2020-06-24 12:10:57,953: INFO): command line arguments:
+chk: chk_no_lig.chk
+config: experiments/config_files/vanilla_no_lig.yaml
+epochs: 15
+log: standard_regressor_no_lig.log
+one_fold: false
+permute: null
+
+2020-06-24 12:10:57,957: INFO): Config:
+loader_config:
+  checkpoint: chk_no_lig.chk
+  descriptors:
+  - ecfp6
+  file: rr_processed_data_sml_all_morgan_rdkit.pkz
+  inputs:
+  - halogen
+  - boronic
+  - solvent
+  - base
+  output: yield
+model_config:
+  act1: relu
+  act2: relu
+  batchnorm: true
+  dropout: 0.2
+  hidden1: 0
+  hidden2: 128
+  l2val: 0.001
+  loss: mse
+  merge: concat
+  n_layers1: 0
+  n_layers2: 1
+  out_act: linear
+  standarization: normal
+train_config:
+  batch_size: 100
+  epochs: 15
+  verbose: true
+
+2020-06-24 12:10:57,957: INFO): using checkpoint: chk_no_lig.chk
+2020-06-24 12:10:57,957: INFO): using 100.0% of data
+2020-06-24 12:11:07,902: INFO): checkpoint saved
+2020-06-24 12:11:08,373: INFO): Constant cols eliminated
+2020-06-24 12:11:08,373: INFO): data shapes: [(17526, 512), (17526, 512), (17526, 181), (17526, 47)]
+2020-06-24 12:11:08,373: INFO): Normal standarization of Y
+2020-06-24 12:11:08,373: INFO): Fold 0
+2020-06-24 12:11:14,827: INFO): Fold 1
+2020-06-24 12:11:21,361: INFO): Fold 2
+2020-06-24 12:11:28,024: INFO): Fold 3
+2020-06-24 12:11:34,833: INFO): Fold 4
+2020-06-24 12:11:41,853: INFO): Transfroming mse to rmse, back transformation to Y space
+2020-06-24 12:11:41,853: INFO): MAE:   16.216 (   1.901)
+2020-06-24 12:11:41,863: INFO): Best epoch: 5
+2020-06-24 12:11:41,863: INFO): CV AV:   22.283
+2020-06-24 12:11:41,863: INFO): CV std    1.993
