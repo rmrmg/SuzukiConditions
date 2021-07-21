@@ -15,7 +15,12 @@ def parseArgs():
     parser.add_argument('--arylhetero', action="store_true", default=False, help='include aryl heteroaryl Suzuki coupling data')
     parser.add_argument('--arylaryl', action="store_true", default=False, help='include aryl aryl Suzuki coupling data')
     parser.add_argument('--withpatents', action='store_true', default=False, help='include also data from patents')
+    parser.add_argument('--withtemponly', action='store_true', default=False, help='include only reaction with given temperature')
+    parser.add_argument('--withbaseonly', action='store_true', default=False, help='include only reaction with given base')
+    parser.add_argument('--withsolvonly', action='store_true', default=False, help='include only reaction with given solvent')
     parser.add_argument('--withyieldonly', action='store_true', default=False, help='include only reaction with given yield')
+    parser.add_argument('--withligandonly', action='store_true', default=False, help='include only reaction with given ligand')
+    parser.add_argument('--withpdonly', action='store_true', default=False, help='include only reaction with given Pd-source')
     parser.add_argument('--output', default='plikzestatamisuzukiego_5', help='output file name')
     args = parser.parse_args()
     if args.heterohetero is False and args.arylhetero is False and args.arylaryl == False:
@@ -408,9 +413,8 @@ def getRxClass(halos, borons, fullDane, printStat=False):
                 statRingB[key]+=1
                 
             except:
-                #raise
+                raise
                 print("B problem", s)
-                continue
         #print ("ONERX", len(brRingName), len(bRingName), '.'.join(brRingName ), '.'.join( bRingName) )
         brNT='other'
         if brRingName:
@@ -425,13 +429,11 @@ def getRxClass(halos, borons, fullDane, printStat=False):
         #'Pd', 'solvent', 'base', 'ligand', 'special', 'temp', 'time', 'raw', 'yield'
         brGenTyp = list(set([x.split(':::')[0] for x in brRingName]))
         bGenTyp = list(set([x.split(':::')[0] for x in bRingName]))
-        #print ("\nFF", fullDane['raw'][0] )
+        #print ("FF", fullDane['raw'][0]['rxInfo']['sbs'] )
         #raise
-        onerxJSON= json.dumps( ("ONERX", brGenTyp, bGenTyp, brRingName, bRingName,  fullDane['solvent'][i],  fullDane['base'][i], fullDane['temp'][i], fullDane['ligand'][i], 
+        onerx.append( json.dumps( ("ONERX", brGenTyp, bGenTyp, brRingName, bRingName,  fullDane['solvent'][i],  fullDane['base'][i], fullDane['temp'][i], fullDane['ligand'][i], 
           fullDane['Pd'][i], fullDane['special'][i].split('; '), fullDane['yield'][i], fullDane['litSource'][i], fullDane['raw'][i]['rxInfo']['sbs'], fullDane['raw'][i]["Reaction"],
-           fullDane['raw'][i]['rxInfo'], fullDane['raw'][i]['Reaction ID']) ) 
-        print("ONERXJSON", onerxJSON)
-        onerx.append(onerxJSON)
+           fullDane['raw'][i]['rxInfo'] ) ) )
     #print(halos, borons)
     if printStat:
         print("STAT B", statB)
@@ -523,19 +525,10 @@ def isPd(text):
     return False
 
 def isBoronic(smi):
-    if smi in {'F[B](F)(F)F', }:
-        return False
     return smi.count('B') > smi.count('Br')
 
 def isHalogen(smi):
-    isHalo = smi.count('Br') > 0 or smi.count('I') >0 or smi.count('Cl')>0
-    if isHalo:
-        try:
-            Chem.CanonSmiles(smi)
-        except:
-            print("problemn with halo", smi)
-            return False
-    return isHalo
+    return smi.count('Br') > 0 or smi.count('I') >0 or smi.count('Cl')>0
 
 def countRings(smi):
     if '%' in smi: #more two digit ring numbering
@@ -578,7 +571,6 @@ def isSuzuki(smiles, verbose=False):
     products = products.split('.')
     boronicInitial = set([ s for s in substrates if isBoronic(s)])
     halogenInitial = set([ s for s in substrates if isHalogen(s)])
-
     prodMols = []
     for p in products:
         #print("P", p, countRings(p), smiles )
@@ -587,7 +579,7 @@ def isSuzuki(smiles, verbose=False):
         try:
             mol=Chem.MolFromSmiles(p)
             if not mol:
-                print("no mol from p", p)
+                print("no mol from p")
                 raise
             prodMols.append(mol)
         except:
@@ -597,23 +589,13 @@ def isSuzuki(smiles, verbose=False):
     if not canonProd:
         #print("no prod in ", smiles)
         return False
-    if not boronicInitial or not halogenInitial:
-        print("SMI", smiles)
-        print("B", boronicInitial, "Halogen", halogenInitial)
-        #raise
-        return False
     canonProdNoStereo = [Chem.MolToSmiles(s, False) for s in prodMols]
     maxIter = 10
     halogen = halogenInitial
     boronic = boronicInitial
     for i in range(maxIter):
         res, resNoStereo = makeAllCombination( suzukiRx, [tuple(halogen), tuple(boronic)])
-        allowedRes= { p:res[p] for p in res if p in canonProd or p in canonProdNoStereo}
-        allowedResNoStereo = { p:resNoStereo[p] for p in resNoStereo if p in canonProd or p in canonProdNoStereo}
-        #if any([p in canonProd for p in res] )  or any([p in canonProdNoStereo for p in resNoStereo ]):
-        if allowedRes or allowedResNoStereo:
-            res = allowedRes
-            resNoStereo = allowedResNoStereo
+        if any([p in canonProd for p in res] )  or any([p in canonProdNoStereo for p in resNoStereo ]):
             obtainedTrueProductNoStereo = [p for p in resNoStereo if p in canonProdNoStereo]
             obtainedTrueProduct = [p for p in res if p in canonProd]
             substrateForTrueProduct = {p:res[p] for p in res}
@@ -625,11 +607,9 @@ def isSuzuki(smiles, verbose=False):
             allBoro =set()
             for pr in resNoStereo:
                 _ = [ allBoro.add(s[1]) for s in resNoStereo[pr] ]
-            #print("RXX", smiles, "SBS", substrateForTrueProduct, substrateForTrueProductNoStereo, "H", halogenInitial, "HALO", tuple([h for h in halogenInitial if h in allHalo]))
-            #print("B", boronicInitial, "BORO", tuple([b for b in boronicInitial if b in allBoro]), "PROD", tuple(obtainedTrueProduct) )
             return {'products':tuple(obtainedTrueProduct), 'productsNoStereo':tuple(obtainedTrueProductNoStereo), 
-                'halogens':tuple([h for h in halogenInitial if h in allHalo or Chem.CanonSmiles(h) in allHalo]), 
-                'borons':tuple([b for b in boronicInitial if b in allBoro or Chem.CanonSmiles(b) in allBoro]), 
+                'halogens':tuple([h for h in halogenInitial if h in allHalo]), 
+                'borons':tuple([b for b in boronicInitial if b in allBoro]), 
                 'sbs':substrateForTrueProduct, 'sbsNoStereo':substrateForTrueProductNoStereo, 'history':history }
             #return True
         halo = set([s for s in res if isHalogen(s)])
@@ -777,11 +757,7 @@ def findBase(data, pos):
         print("nobase", [data[x][pos] for x in data] )
     return ()
 
-def ligandName(oldName):
-    if oldName in ('1,3-Bis(2,6-Diisopropylphenyl)imidazol-2-ylidene', '1,3-bis(2,6-bis(diphenylmethyl)-4-methylphenyl)imidazol-2-ylidene', 
-        '1,3‐Bis{2,6‐bis(diphenylmethyl)‐4‐methylphenyl}imidazole‐2‐ylidene', '1,3-bis(diisopropylphenyl)-2-imidazolidinylidene', '1,3-bis[2,6-diisopropylphenyl]imidazolylidene'):
-        return 'iPr-PEPPSI'
-    return oldName
+
 
 def findLigand(data, pos, pd):
     headerToIgnore={'Fulltext of reaction', 'References', 'Product', 'rxInfo'}
@@ -825,7 +801,7 @@ def findLigand(data, pos, pd):
                     entry ='APhos'
                 if entry in ('4,5-bis(diphenylphos4,5-bis(diphenylphosphino)-9,9-dimethylxanthenephino)-9,9-dimethylxanthene'):
                     entry='xantphos'
-                if entry in ("(1RS,2RS,3SR,4SR)-1,2,3,4-tetrakis((diphenylphosphanyl)methyl)cyclopentane", 'Tedicyp'):
+                if entry in ("(1RS,2RS,3SR,4SR)-1,2,3,4-tetrakis((diphenylphosphanyl)methyl)cyclopentane",):
                     entry = 'tedicyp'
                 if entry.endswith('oxide'):
                     continue
@@ -837,7 +813,7 @@ def findLigand(data, pos, pd):
         if any(['dppf' in pdentry for pdentry in pd]):
             found.append('dppf')
     found = list(set(found))
-    #print("LIGANDS", *found, sep='\t')
+    print("LIGANDS", *found, sep='\t')
     return found
 
 
@@ -878,8 +854,9 @@ def getCorrection( cdict):
     return corr
 
 
-def entryStat(data, removeDuplicate=True, onlyWithYield=False, correctionFiles=None ):
+def entryStat(data, limits, removeDuplicate=True, correctionFiles=None ):
     correction=False
+    onlyWithYield = limits.withyieldonly
     if correctionFiles:
         correction=getCorrection(correctionFiles)
     numEntry = len(data[ tuple(data.keys())[0] ])
@@ -895,10 +872,9 @@ def entryStat(data, removeDuplicate=True, onlyWithYield=False, correctionFiles=N
         time = findTime(data,lid)
         special = findSpecialCare(data,lid)
         base= findBase(data,lid)
-        
+
         rxyield = findYield(data, lid)
         rxidcnr = getCNR(data,lid)
-        ligand = None
         if correction:
             if 'base' in correction and rxidcnr in correction['base']:
                 base = correction['base'][rxidcnr].strip()
@@ -910,23 +886,27 @@ def entryStat(data, removeDuplicate=True, onlyWithYield=False, correctionFiles=N
             #raise
             if 'ligand' in correction and rxidcnr in correction['ligand']:
                 ligand = correction['ligand'][rxidcnr].strip()
-                #print("LIGACOR", ligand)
                 if 'exclude' in ligand or 'bad data' in ligand:
                     continue
-                ligand = [ligand, ]
-        if ligand == None:
-            ligand= findLigand(data, lid, withPd)
-        if ligand and 'exclude' in ligand[0]:
+        ligand= findLigand(data, lid, withPd)
+        if not base and limits.withbaseonly:
             continue
-        ligand =[ ligandName(x) for x in ligand]
         if onlyWithYield and not rxyield:
+            continue
+        if not ligand and limits.withligandonly:
+            continue
+        if not temp and limits.withtemponly:
+            continue
+        if not solvent and limits.withsolvonly:
+            continue
+        if not withPd and limits.withpdonly:
             continue
         if removeDuplicate:
             thisId = (tuple(withPd), tuple(ligand), tuple(base), tuple(solvent), str(data['rxInfo'][lid]['sbs']) )
             if thisId in uniqSet:
                 continue
             uniqSet.add( thisId)
-        print("LIGAND==", ligand, "==", rxidcnr, rxidcnr in correction['ligand'], "PD", withPd)
+        print("LIGAND==", ligand, rxidcnr, rxidcnr in correction['ligand'], "PD", withPd)
         dane['Pd'].append( tuple(withPd))
         dane['solvent'].append(solvent)
         dane['base'].append(base)
@@ -959,8 +939,7 @@ if __name__ == "__main__":
             files.append( prefix+i)
     if parser.arylhetero:
         prefix='downloadedRx/hetero-aryl/'
-        arylhetero = ['aga1.csv', 'aga2.csv', 'aga3.csv', 'aga4.csv', 'aga5.csv',
-                'Reaxys_Exp_20200810_170942.csv', 'Reaxys_Exp_20200813_094433.csv', 'Reaxys_Exp_20200814_091804.csv', 'Reaxys_Exp_20200815_201313.csv', 'Reaxys_Exp_20200817_184437.csv']
+        arylhetero=['aga1.csv', 'aga2.csv', 'aga3.csv', 'aga4.csv', 'aga5.csv',]
         for i in arylhetero:
             files.append(prefix+i)
     if parser.arylaryl:
@@ -977,26 +956,12 @@ if __name__ == "__main__":
     print("DATA", data.keys())
     print("+++++++++++++++++")
     #simpleStat(data)
-    dane=entryStat(data, removeDuplicate=True, onlyWithYield=parser.withyieldonly, correctionFiles={'base':'./downloadedRx/nobase.csv', 'ligand':'./downloadedRx/noligand.csv'} )
+    dane=entryStat(data, parser, removeDuplicate=True,  correctionFiles={'base':'./downloadedRx/nobase.csv', 'ligand':'./downloadedRx/noligand.csv'} )
     import json
     json.dump(dane, open(parser.output, 'w') )
     print("h", data.keys() )
     allrx=getRxClass( [lst['rxInfo']['halogens'] for lst in dane['raw']], [ lst['rxInfo']['borons'] for lst in dane['raw'] ], dane)
-    makeOnerx=True
-    if makeOnerx:
-        fnw= open( parser.output+'.onerx', 'w')
-        for i in allrx:
-            print(i, file=fnw)
-        fnw.close()
-    makecsv=True
-    if makecsv:
-        dane['borons'] = [ tuple([Chem.CanonSmiles(y) for y in dane['raw'][x]['rxInfo']['borons']]) for x in range( len(dane['raw']))]
-        dane['halogens'] = [ tuple([Chem.CanonSmiles(y) for y in dane['raw'][x]['rxInfo']['halogens']]) for x in range( len(dane['raw']))]
-        dane['reaction'] =[dane['raw'][x]['Reaction'] for x in range( len(dane['raw']))]
-        _ = dane.pop('raw')
-        fnw=open( parser.output+'.csv', 'w')
-        allkeys= tuple(dane.keys() )
-        print( *allkeys, sep='\t', file=fnw)
-        for i in range( len(dane[allkeys[0] ])):
-            print( *[dane[x][i] for x in allkeys], sep='\t', file=fnw)
-        fnw.close()
+    fnw= open( parser.output+'.onerx', 'w')
+    for i in allrx:
+        print(i, file=fnw)
+    fnw.close()
