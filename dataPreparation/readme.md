@@ -4,8 +4,8 @@
 - SuzukiCouplingReactionRXID.txt - List of reaxysID for all extracted reactions. 
     The reaction list was subject of further filtration with parseReaxsysFile_v2.py script.
    
-- parseReaxsysFile_v2.py - script for
-- makeDataForKeras_v2.py
+- parseReaxsysFile_v2.py - script which use raw-data for generating internal representation which is the use by `makeDataForKeras_v2.py` to general AI input. Before use one need to: i) get or prepare raw-data (see p. 1 in instruction below) and adjust file paths (see p. 2 below)
+- makeDataForKeras_v2.py - script which prepares input for AI learning. The script use results of `parseReaxsysFile_v2.py` as a input.
 
 ## Instruction for data preparation
 ### 1. Download or preaprare raw data 
@@ -20,19 +20,19 @@ We download raw data from reaxsys however you can use any source of literature r
  - 'References' - source of report. Reaction report is clasified as patent when word 'patent' is in the field otherwise is clasified as 'article'
 
  Reaxys format is not very strict or well defined therefore for some informations (like catalysts or ligand) we search in whole line expect defined below fields:
-    Following fields are ignored when looking for catalyst:
-    - 'Fulltext of reaction
-    - 'Example title' 
-    - 'rxInfo'
+ Following fields are ignored when looking for catalyst:
+  - 'Fulltext of reaction
+  - 'Example title' 
+  - 'rxInfo'
 
  Following fields are ignored when looking for ligands:
-    - 'Fulltext of reaction' 
-    - 'References', 
-    - 'Product'
-    - 'rxInfo'
+  - 'Fulltext of reaction' 
+  - 'References', 
+  - 'Product'
+  - 'rxInfo'
 
 ### 2. Add path to raw files
-Information about path to the files with raw data should be insert to parseReaxsysFile_v2.py script. you need to adjust following variables:
+Information about path to the files with raw data should be insert to `parseReaxsysFile_v2.py` script. you need to adjust following variables:
 
  - prefixheterohetero - directory where files with raw data for heteroaryl-hetoaryl Suzuki coupling are stored. Default location is 'downloadedRx/hetero-hetero/'
  - heterohetero - list of files in directory defined by `prefixheterohetero` which will be used
@@ -42,6 +42,35 @@ Information about path to the files with raw data should be insert to parseReaxs
  - arylaryl - list of files in directory defined by `prefixarylhetero` which will be used.
     
 ### 3 Convert and filter raw data
-
+The `parseReaxsysFile_v2.py` script filter out reaction which are not Suzuki coupling (based on performed Rdkit's Reaction on subsrates). The script has following options which allow further filtration:
+ - --heterohetero    include heteroaryl heteroaryl Suzuki coupling 
+ - --arylhetero      include aryl heteroaryl Suzuki coupling 
+ - --arylaryl        include aryl aryl Suzuki coupling 
+ -  --withpatents     include also data from patents
+ - --withtemponly    include only reaction with given temperature
+ - --withbaseonly    include only reaction with given base
+ - --withsolvonly    include only reaction with given solvent
+ - --withyieldonly   include only reaction with given yield
+ - --withligandonly  include only reaction with given ligand
+ - --withpdonly      include only reaction with given Pd-source
+ 
+All AI models were build on data extracted with following options: `--heterohetero --arylhetero  --withbaseonly --withsolvonly --withyieldonly --withpdonly`
+ 
 ### 4 generate input for AI
-
+The script `makeDataForKeras_v2.py` can be used to generated most of input for AI training, depending on selected options:
+ - --conditions     defined how information about reaction conditions should be encoded in AI input. Allowed values:    
+   - newClasses
+   - oldClasses
+   - embedded
+   - newClassesEmbedLig
+   - oldClassesEmbedLig
+ - --mode     defined how information about starting material (i.e. coupling partners) should be encoded for AI training, allowed values:
+   - morgan3 - use Morgan fingerprint
+   - enc - use representation from autoencoder
+   - canonSmiles - use canonical smiles
+   - rdkit - use rdkit descriptors as returned by rdkit.Chem.Descriptors.descList
+   - morgan3rdkit - use concatenation of Morgan fingerprint and rdkit descriptors
+ - --includeligand  - how information about ligands should be incorporated. Allowed values {raw,scalled} 
+ - --allownotemp - when this option is used reaction without temperature will be included in AI input
+ - --userawtemperature - when set raw value (i.e. Celcius degree) of temperature will be set to AI input
+ - --outputMclass 
