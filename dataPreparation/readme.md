@@ -73,4 +73,4 @@ The script `makeDataForKeras_v2.py` can be used to generated most of input for A
  - --includeligand  - how information about ligands should be incorporated. Allowed values {raw,scalled} 
  - --allownotemp - when this option is used reaction without temperature will be included in AI input
  - --userawtemperature - when set raw value (i.e. Celcius degree) of temperature will be set to AI input
- - --outputMclass 
+ - --outputMclass - in addition to main results file, generate additional file with pairs of reactions which fullfill two criteria: a) fall into the same class of base and solvent and b) difference between reactions yields is at least 25%
