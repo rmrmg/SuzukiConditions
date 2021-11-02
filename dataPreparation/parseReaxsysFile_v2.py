@@ -933,20 +933,20 @@ if __name__ == "__main__":
     print("P", parser)
     files=[]
     if parser.heterohetero:
-        prefix='downloadedRx/hetero-hetero/'
-        heterohetero=['39074585_20200310_190414_098.xls', '39074585_20200310_191650_204.xls', '39074585_20200310_194241_493.xls', 'Suzuki_Har_1-2500.csv', 'Suzuki_Har_2501-5000.csv']
+        prefixheterohetero = 'downloadedRx/hetero-hetero/'
+        heterohetero = ['39074585_20200310_190414_098.xls', '39074585_20200310_191650_204.xls', '39074585_20200310_194241_493.xls', 'Suzuki_Har_1-2500.csv', 'Suzuki_Har_2501-5000.csv']
         for i in heterohetero:
-            files.append( prefix+i)
+            files.append(prefixheterohetero+i)
     if parser.arylhetero:
-        prefix='downloadedRx/hetero-aryl/'
-        arylhetero=['aga1.csv', 'aga2.csv', 'aga3.csv', 'aga4.csv', 'aga5.csv',]
+        prefixarylhetero = 'downloadedRx/hetero-aryl/'
+        arylhetero = ['aga1.csv', 'aga2.csv', 'aga3.csv', 'aga4.csv', 'aga5.csv',]
         for i in arylhetero:
-            files.append(prefix+i)
+            files.append(prefixarylhetero+i)
     if parser.arylaryl:
-        prefix='downloadedRx/aryl-aryl/'
+        prefixarylaryl='downloadedRx/aryl-aryl/'
         arylaryl=['Reaxys_Exp_20200424_184807.csv', 'Reaxys_Exp_20200424_201155.csv', 'Reaxys_Exp_20200425_011430.csv', 'Reaxys_Exp_20200425_060051.csv', 'Reaxys_Exp_20200427_151519.csv']
         for i in arylaryl:
-            files.append(prefix+i)
+            files.append(prefixarylaryl+i)
     res = [ parseFile(fn, includePatents=parser.withpatents) for fn in files]
     print( [ len(r['header']) for r in res])
     #def combinateFiles(res, removeDuplicatesByPos=(0,), ):
