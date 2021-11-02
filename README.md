@@ -16,7 +16,7 @@ from reaxys database. One can download the dataset from reaxsys using published 
 2. When dataset is present it can be filtered and transform into for suitable for AI learining, see dataPreparation/readme.md for details
 3. Once proper input is generated one can train any of tested NN models using scripts from  `classification/`, `regression/` or `gcnn_and_dan/`
 
-# Requirments
+# Requirements
 1. Python
 2. RDkit 
 3. TensorFlow
