@@ -59,11 +59,11 @@ All AI models were build on data extracted with following options: `--heterohete
 ### 4 generate input for AI
 The script `makeDataForKeras_v2.py` can be used to generated most of input for AI training, depending on selected options:
  - --conditions     defined how information about reaction conditions should be encoded in AI input. Allowed values:    
-   - newClasses
-   - oldClasses
-   - embedded
-   - newClassesEmbedLig
-   - oldClassesEmbedLig
+   - newClasses - 'coarse-grained' classes in the paper (Table 3 entry 4)
+   - oldClasses - fine classes in the paper (Table 3 entry 2)
+   - embedded - embeded condition (Table 3 entry 6)
+   - newClassesEmbedLig - 'coarse-grained' classes  with ligand in the paper (Table 3 entry 5)
+   - oldClassesEmbedLig - fine classes with ligand in the paper (Table 3 entry 3)
  - --mode     defined how information about starting material (i.e. coupling partners) should be encoded for AI training, allowed values:
    - morgan3 - use Morgan fingerprint
    - enc - use representation from autoencoder
