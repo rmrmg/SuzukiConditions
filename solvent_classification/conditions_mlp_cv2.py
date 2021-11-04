@@ -335,7 +335,7 @@ def categorical_stats(ytrue, p, n=3):
    return topk
 
 
-def prepare_data(name='rr_processed_data_sml_all_morgan_rdkit.pkz', desc=['ecfp6'], inp=['boronic','halogen'], out='solvent'):
+def prepare_data(name='processed_data_sml_morgan_rdkit_m2v.pkz', desc=['ecfp6'], inp=['boronic','halogen'], out='solvent'):
    with gzip.open(name, 'rb') as f: data=pic.load(f)
    output = data['%s_enc'%out]
    arrays=[]
@@ -388,16 +388,16 @@ if __name__=='__main__':
    parser.add_argument('--mode', type=str, default='prod', choices=['prod', 'sum'] )
 #   parser.add_argument('--lr', type=float, default=0.001 )
 #   parser.add_argument('--hidden', type=float, default=256 )
-   parser.add_argument('--separate', action='store_true' )
-   parser.add_argument('--s_class', action='store_true' )
-   parser.add_argument('--m_class', action='store_true' )
+#   parser.add_argument('--separate', action='store_true' )
    parser.add_argument('--standardize', action='store_true' )
    parser.add_argument('--join_base', action='store_true' )
    args=parser.parse_args()
 
+   args.separate=True
+
    logger = make_logger(args.log)
 
-   with gzip.open('m_indices.pkz','rb') as f: m_indices=pic.load(f)
+   #with gzip.open('m_indices.pkz','rb') as f: m_indices=pic.load(f)
 
    logging.info('START')
    #make dataset
@@ -408,15 +408,11 @@ if __name__=='__main__':
       _, solv = prepare_data(desc=args.desc, out='solvent')
       Ys=[base,solv]
    else:
-      if args.desc==['m2v']:
-         X, Y = prepare_data(name='vect_data2.pkz', desc=args.desc, out=args.out)
-      else:
-         X, Y = prepare_data(desc=args.desc, out=args.out)
+      X, Y = prepare_data(desc=args.desc, out=args.out)
       Ys=[Y]
    kf = KFold(n_splits=args.folds)   
    out_size = 1 if  args.separate else Y.shape[1]
 
-   s_indices = np.array(m_indices['single'])
    logging.info('Data loaded')
 
    #model_config = {'input_size':X.shape[1], 'output_size':out_size, 'layers':args.layers, 'hidden':args.hidden, 'lr':args.lr, 'opt':'adam'}
@@ -440,28 +436,15 @@ if __name__=='__main__':
    I=0
    m_results, am_results = [],[]
    for train_idx, test_idx in kf.split(X):
-      if args.s_class:
-         train_idx = np.array([xx for xx in train_idx if xx in s_indices])
-         s_test_mask = np.array([xx in s_indices for xx in test_idx])
-      if args.m_class:
-         train_idx = np.array([xx for xx in train_idx if xx in m_indices['Mmax']])
       Xtrain, Xtest = X[train_idx,:], X[test_idx,:]
       Ys_train = [yy[train_idx] for yy in Ys]
       Ys_test = [yy[test_idx] for yy in Ys]
-      mmasks={}
-      for m_min,m_max in [('Mmin','Mmax'),('aMmin','aMmax')]:
-         min_in_tst = np.array([xx in test_idx for xx in m_indices[m_min]])
-         max_in_tst = np.array([xx in test_idx for xx in m_indices[m_max]])
-         both_in_tst = min_in_tst & max_in_tst
-         mmasks[m_min] = [np.where(test_idx==xx)[0][0] for xx in m_indices[m_min][both_in_tst]]
-         mmasks[m_max] = [np.where(test_idx==xx)[0][0] for xx in m_indices[m_max][both_in_tst]]
       logging.info('Fold %i'%I)
       I+=1
       logging.info('  Train class count: '+str(Ys_train[0].sum(axis=0)))
       logging.info('  Train class count: '+str(Ys_train[-1].sum(axis=0)))
       logging.info('  Test class count: '+str(Ys_test[0].sum(axis=0)))
       logging.info('  Test class count: '+str(Ys_test[-1].sum(axis=0)))
-      logging.info('Mclass: %s   aMclass:%i'%(len(mmasks['Mmin']), len(mmasks['aMmin'])))
 
       columns_pred, columns_ref = [],[]
       PART=0
@@ -489,9 +472,6 @@ if __name__=='__main__':
          
          ks = categorical_stats(Yref,p)
          logging.info('   Baseline: top-1,2,3 :%5.3f %5.3f %5.3f'%tuple(ks))
-         if args.s_class:
-            ks_s = categorical_stats(Yref[s_test_mask], p[s_test_mask])
-            logging.info('  S-Baseline: top-1,2,3 :%5.3f %5.3f %5.3f'%tuple(ks_s))
          logging.info('PART %i'%PART)
          columns_pred.append(p)
          columns_ref.append(Yref)
@@ -501,20 +481,7 @@ if __name__=='__main__':
          p = make_cartesian(*columns_pred, mod=args.mode)
          ks = categorical_stats(Yref,p, n=5)
          logging.info('ALL Baseline: top-1,2,3,4,5 :%5.3f %5.3f %5.3f %5.3f %5.3f '%tuple(ks))
-         if args.s_class:
-            ks_s = categorical_stats(Yref[s_test_mask], p[s_test_mask], n=5)
-            logging.info('ALL S-Baseline: top-1,2,3 :%5.3f %5.3f %5.3f %5.3f %5.3f'%tuple(ks_s))
-         ref_min, ref_max = Yref[mmasks['Mmin']], Yref[mmasks['Mmax']]
-         ref_amin, ref_amax = Yref[mmasks['aMmin']], Yref[mmasks['aMmax']]
-         p_min, p_max = p[mmasks['Mmin']], p[mmasks['Mmax']]
-         p_amin, p_amax = p[mmasks['aMmin']], p[mmasks['aMmax']]
 
-         pairs = (((p_max*ref_max).sum(axis=1) -(p_min*ref_min).sum(axis=1))>0).mean()
-         apairs = (((p_amax*ref_amax).sum(axis=1) -(p_amin*ref_amin).sum(axis=1))>0).mean()
-
-         logging.info('correct M pairs (allowed): %5.3f (%5.3f) '%(pairs,apairs))
-         m_results.append(pairs)
-         am_results.append(apairs)
 
          
       results.append(ks) 
@@ -523,5 +490,3 @@ if __name__=='__main__':
    k_std = np.std(results, axis=0)
    for i,x in enumerate(k_mean):
       logging.info('CV top-%i: %8.3f (%5.3f)'%(i+1,x,k_std[i]))
-   logging.info('correct  M pairs: %8.3f(%5.3f)'%(np.mean(m_results), np.std(m_results)))
-   logging.info('correct aM pairs: %8.3f(%5.3f)'%(np.mean(am_results), np.std(am_results)))

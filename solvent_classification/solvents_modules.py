@@ -363,7 +363,7 @@ def categorical_stats(ytrue, p):
    return topk
 
 
-def prepare_data(name='rr_processed_data.pkz', desc=['ecfp6'], inp=['boronic','halogen'], out='solvent'):
+def prepare_data(name='processed_data_sml_morgan_rdkit_m2v.pkz', desc=['ecfp6'], inp=['boronic','halogen'], out='solvent'):
    with gzip.open(name, 'rb') as f: data=pic.load(f)
    output = data['%s_enc'%out]
    arrays=[]
