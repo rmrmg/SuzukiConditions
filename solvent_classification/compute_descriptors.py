@@ -222,7 +222,7 @@ if __name__=='__main__':
 
    logging.info('START')
    d=load_rr(args.datafile)
-   logging.info('Raw RR data loaded')
+   logging.info('Raw data loaded')
 
    for k in ['solvent','base']:
       enc = str_one_hot(d[k], True)
