@@ -1,7 +1,8 @@
 # SuzukiConditions
 Here are scipts for data processing, inputs generation and logs from training for all models described in the paper entitled 
 `Machine Learning May Simply Capture Literature Popularity Trends: The case of Suzuki-Miyaura coupling.` by Wiktor Beker, Rafał Roszak, Agnieszka Wołos, 
-Nicholas H. Angello, Vandana Rathore, Martin D. Burke, and Bartosz A. Grzybowski.
+Nicholas H. Angello, Vandana Rathore, Martin D. Burke, and Bartosz A. Grzybowski. Link and DOI to the paper will be added when will be provided by publisher.
+DOI to this repo is [10.5281/zenodo.4652819](http://doi.org/10.5281/zenodo.4652819)
 
 # Contents
 The repo consists of 4 parts placed in separated directories:
