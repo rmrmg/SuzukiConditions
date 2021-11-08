@@ -9,7 +9,7 @@ The repo consists of 4 parts placed in separated directories:
 from reaxys database. One can download the dataset from reaxsys using published reaxsysID or can prepare own dataset - see readme.md file in dataPreparation/ for details
 - classification/ - scripts used for classification task with input and logs obtained from training
 - regression/ - scripts used regression task and related input and logs
-- gcnn_and_dan/ - scripts used for Graph Convolution Neural Network (GCNN) and Discriminative Adversarial Networks (DAN)
+- solvent_classification/ - scripts and data for advanced model for solvent classification. 
 
 # How to start
 1. Unfortunately we cannot publish our reaction dataset instead one need to download it manually from reaxsys or use (or generate) own dataset using information in dataPreparation/readme.md
@@ -23,3 +23,4 @@ from reaxys database. One can download the dataset from reaxsys using published 
 4. Keras
 5. Numpy
 6. Scikit-learn
+7. additional requirements for advanced models are described in solvent_classification/readme.md
