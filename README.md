@@ -11,6 +11,7 @@ from reaxys database. One can download the dataset from reaxsys using published 
 - classification/ - scripts used for classification task with input and logs obtained from training
 - regression/ - scripts used regression task and related input and logs
 - solvent_classification/ - scripts and data for advanced model for solvent classification. 
+- uspto/ - all scripts and data related to experiments with USPTO
 
 # How to start
 1. Unfortunately we cannot publish our reaction dataset instead one need to download it manually from reaxsys or use (or generate) own dataset using information in dataPreparation/readme.md
